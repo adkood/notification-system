@@ -2,6 +2,9 @@
 // require_once '../config/email.php';
 // require_once '../models/EmailQueue.php';
 
+require_once ROOT_PATH . '/models/EmailQueue.php';
+require_once ROOT_PATH . '/models/EmailTemplate.php';
+
 require_once ROOT_PATH . '/config/email.php';
 
 class EmailService {

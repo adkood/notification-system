@@ -1,0 +1,462 @@
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+PHP Fatal error:  Uncaught Error: Cannot access protected property EmailQueue::$table in /var/www/html/notification-system/cron/email_processor.php:100
+Stack trace:
+#0 /var/www/html/notification-system/cron/email_processor.php(117): EmailProcessor->cleanupOldEmails()
+#1 {main}
+  thrown in /var/www/html/notification-system/cron/email_processor.php on line 100
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+PHP Fatal error:  Uncaught Error: Cannot access protected property EmailQueue::$table in /var/www/html/notification-system/cron/email_processor.php:100
+Stack trace:
+#0 /var/www/html/notification-system/cron/email_processor.php(117): EmailProcessor->cleanupOldEmails()
+#1 {main}
+  thrown in /var/www/html/notification-system/cron/email_processor.php on line 100
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+PHP Fatal error:  Uncaught Error: Cannot access protected property EmailQueue::$table in /var/www/html/notification-system/cron/email_processor.php:100
+Stack trace:
+#0 /var/www/html/notification-system/cron/email_processor.php(117): EmailProcessor->cleanupOldEmails()
+#1 {main}
+  thrown in /var/www/html/notification-system/cron/email_processor.php on line 100
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+PHP Fatal error:  Uncaught Error: Cannot access protected property EmailQueue::$table in /var/www/html/notification-system/cron/email_processor.php:100
+Stack trace:
+#0 /var/www/html/notification-system/cron/email_processor.php(117): EmailProcessor->cleanupOldEmails()
+#1 {main}
+  thrown in /var/www/html/notification-system/cron/email_processor.php on line 100
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+PHP Fatal error:  Uncaught Error: Cannot access protected property EmailQueue::$table in /var/www/html/notification-system/cron/email_processor.php:100
+Stack trace:
+#0 /var/www/html/notification-system/cron/email_processor.php(117): EmailProcessor->cleanupOldEmails()
+#1 {main}
+  thrown in /var/www/html/notification-system/cron/email_processor.php on line 100
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+PHP Fatal error:  Uncaught Error: Cannot access protected property EmailQueue::$table in /var/www/html/notification-system/cron/email_processor.php:100
+Stack trace:
+#0 /var/www/html/notification-system/cron/email_processor.php(117): EmailProcessor->cleanupOldEmails()
+#1 {main}
+  thrown in /var/www/html/notification-system/cron/email_processor.php on line 100
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+PHP Fatal error:  Uncaught Error: Cannot access protected property EmailQueue::$table in /var/www/html/notification-system/cron/email_processor.php:100
+Stack trace:
+#0 /var/www/html/notification-system/cron/email_processor.php(117): EmailProcessor->cleanupOldEmails()
+#1 {main}
+  thrown in /var/www/html/notification-system/cron/email_processor.php on line 100
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+PHP Fatal error:  Uncaught Error: Cannot access protected property EmailQueue::$table in /var/www/html/notification-system/cron/email_processor.php:100
+Stack trace:
+#0 /var/www/html/notification-system/cron/email_processor.php(117): EmailProcessor->cleanupOldEmails()
+#1 {main}
+  thrown in /var/www/html/notification-system/cron/email_processor.php on line 100
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+PHP Fatal error:  Uncaught Error: Cannot access protected property EmailQueue::$table in /var/www/html/notification-system/cron/email_processor.php:100
+Stack trace:
+#0 /var/www/html/notification-system/cron/email_processor.php(117): EmailProcessor->cleanupOldEmails()
+#1 {main}
+  thrown in /var/www/html/notification-system/cron/email_processor.php on line 100
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+PHP Fatal error:  Uncaught Error: Cannot access protected property EmailQueue::$table in /var/www/html/notification-system/cron/email_processor.php:100
+Stack trace:
+#0 /var/www/html/notification-system/cron/email_processor.php(117): EmailProcessor->cleanupOldEmails()
+#1 {main}
+  thrown in /var/www/html/notification-system/cron/email_processor.php on line 100
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+PHP Fatal error:  Uncaught Error: Cannot access protected property EmailQueue::$conn in /var/www/html/notification-system/cron/email_processor.php:106
+Stack trace:
+#0 /var/www/html/notification-system/cron/email_processor.php(117): EmailProcessor->cleanupOldEmails()
+#1 {main}
+  thrown in /var/www/html/notification-system/cron/email_processor.php on line 106
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+PHP Fatal error:  Uncaught Error: Cannot access protected property EmailQueue::$conn in /var/www/html/notification-system/cron/email_processor.php:106
+Stack trace:
+#0 /var/www/html/notification-system/cron/email_processor.php(117): EmailProcessor->cleanupOldEmails()
+#1 {main}
+  thrown in /var/www/html/notification-system/cron/email_processor.php on line 106
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+PHP Fatal error:  Uncaught Error: Cannot access protected property EmailQueue::$conn in /var/www/html/notification-system/cron/email_processor.php:106
+Stack trace:
+#0 /var/www/html/notification-system/cron/email_processor.php(117): EmailProcessor->cleanupOldEmails()
+#1 {main}
+  thrown in /var/www/html/notification-system/cron/email_processor.php on line 106
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+PHP Fatal error:  Uncaught Error: Cannot access protected property EmailQueue::$conn in /var/www/html/notification-system/cron/email_processor.php:106
+Stack trace:
+#0 /var/www/html/notification-system/cron/email_processor.php(117): EmailProcessor->cleanupOldEmails()
+#1 {main}
+  thrown in /var/www/html/notification-system/cron/email_processor.php on line 106
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+PHP Fatal error:  Uncaught Error: Cannot access protected property EmailQueue::$conn in /var/www/html/notification-system/cron/email_processor.php:106
+Stack trace:
+#0 /var/www/html/notification-system/cron/email_processor.php(117): EmailProcessor->cleanupOldEmails()
+#1 {main}
+  thrown in /var/www/html/notification-system/cron/email_processor.php on line 106
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+PHP Fatal error:  Uncaught Error: Cannot access protected property EmailQueue::$conn in /var/www/html/notification-system/cron/email_processor.php:106
+Stack trace:
+#0 /var/www/html/notification-system/cron/email_processor.php(117): EmailProcessor->cleanupOldEmails()
+#1 {main}
+  thrown in /var/www/html/notification-system/cron/email_processor.php on line 106
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+PHP Fatal error:  Uncaught Error: Cannot access protected property EmailQueue::$conn in /var/www/html/notification-system/cron/email_processor.php:106
+Stack trace:
+#0 /var/www/html/notification-system/cron/email_processor.php(117): EmailProcessor->cleanupOldEmails()
+#1 {main}
+  thrown in /var/www/html/notification-system/cron/email_processor.php on line 106
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+PHP Fatal error:  Uncaught Error: Cannot access protected property EmailQueue::$conn in /var/www/html/notification-system/cron/email_processor.php:106
+Stack trace:
+#0 /var/www/html/notification-system/cron/email_processor.php(117): EmailProcessor->cleanupOldEmails()
+#1 {main}
+  thrown in /var/www/html/notification-system/cron/email_processor.php on line 106
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+PHP Fatal error:  Uncaught Error: Cannot access protected property EmailQueue::$conn in /var/www/html/notification-system/cron/email_processor.php:106
+Stack trace:
+#0 /var/www/html/notification-system/cron/email_processor.php(117): EmailProcessor->cleanupOldEmails()
+#1 {main}
+  thrown in /var/www/html/notification-system/cron/email_processor.php on line 106
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+PHP Fatal error:  Uncaught Error: Cannot access protected property EmailQueue::$conn in /var/www/html/notification-system/cron/email_processor.php:106
+Stack trace:
+#0 /var/www/html/notification-system/cron/email_processor.php(117): EmailProcessor->cleanupOldEmails()
+#1 {main}
+  thrown in /var/www/html/notification-system/cron/email_processor.php on line 106
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+PHP Fatal error:  Uncaught Error: Cannot access protected property EmailQueue::$conn in /var/www/html/notification-system/cron/email_processor.php:106
+Stack trace:
+#0 /var/www/html/notification-system/cron/email_processor.php(117): EmailProcessor->cleanupOldEmails()
+#1 {main}
+  thrown in /var/www/html/notification-system/cron/email_processor.php on line 106
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+PHP Fatal error:  Uncaught Error: Cannot access protected property EmailQueue::$conn in /var/www/html/notification-system/cron/email_processor.php:106
+Stack trace:
+#0 /var/www/html/notification-system/cron/email_processor.php(117): EmailProcessor->cleanupOldEmails()
+#1 {main}
+  thrown in /var/www/html/notification-system/cron/email_processor.php on line 106
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+PHP Fatal error:  Uncaught Error: Cannot access protected property EmailQueue::$conn in /var/www/html/notification-system/cron/email_processor.php:106
+Stack trace:
+#0 /var/www/html/notification-system/cron/email_processor.php(117): EmailProcessor->cleanupOldEmails()
+#1 {main}
+  thrown in /var/www/html/notification-system/cron/email_processor.php on line 106
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+PHP Fatal error:  Uncaught Error: Cannot access protected property EmailQueue::$conn in /var/www/html/notification-system/cron/email_processor.php:106
+Stack trace:
+#0 /var/www/html/notification-system/cron/email_processor.php(117): EmailProcessor->cleanupOldEmails()
+#1 {main}
+  thrown in /var/www/html/notification-system/cron/email_processor.php on line 106
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+PHP Fatal error:  Uncaught Error: Cannot access protected property EmailQueue::$conn in /var/www/html/notification-system/cron/email_processor.php:106
+Stack trace:
+#0 /var/www/html/notification-system/cron/email_processor.php(117): EmailProcessor->cleanupOldEmails()
+#1 {main}
+  thrown in /var/www/html/notification-system/cron/email_processor.php on line 106
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+PHP Fatal error:  Uncaught Error: Cannot access protected property EmailQueue::$conn in /var/www/html/notification-system/cron/email_processor.php:106
+Stack trace:
+#0 /var/www/html/notification-system/cron/email_processor.php(117): EmailProcessor->cleanupOldEmails()
+#1 {main}
+  thrown in /var/www/html/notification-system/cron/email_processor.php on line 106
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+PHP Fatal error:  Uncaught Error: Cannot access protected property EmailQueue::$conn in /var/www/html/notification-system/cron/email_processor.php:106
+Stack trace:
+#0 /var/www/html/notification-system/cron/email_processor.php(117): EmailProcessor->cleanupOldEmails()
+#1 {main}
+  thrown in /var/www/html/notification-system/cron/email_processor.php on line 106
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+PHP Fatal error:  Uncaught Error: Cannot access protected property EmailQueue::$conn in /var/www/html/notification-system/cron/email_processor.php:106
+Stack trace:
+#0 /var/www/html/notification-system/cron/email_processor.php(117): EmailProcessor->cleanupOldEmails()
+#1 {main}
+  thrown in /var/www/html/notification-system/cron/email_processor.php on line 106
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+PHP Fatal error:  Uncaught Error: Cannot access protected property EmailQueue::$conn in /var/www/html/notification-system/cron/email_processor.php:106
+Stack trace:
+#0 /var/www/html/notification-system/cron/email_processor.php(117): EmailProcessor->cleanupOldEmails()
+#1 {main}
+  thrown in /var/www/html/notification-system/cron/email_processor.php on line 106
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+Email Processor finished. Results: Sent 0, Failed 0
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+Email Processor finished. Results: Sent 0, Failed 0
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+Email Processor finished. Results: Sent 0, Failed 0
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+Email Processor finished. Results: Sent 0, Failed 0
+PHP Fatal error:  Uncaught Error: Cannot access protected property EmailQueue::$conn in /var/www/html/notification-system/cron/email_processor.php:106
+Stack trace:
+#0 /var/www/html/notification-system/cron/email_processor.php(117): EmailProcessor->cleanupOldEmails()
+#1 {main}
+  thrown in /var/www/html/notification-system/cron/email_processor.php on line 106
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+PHP Fatal error:  Uncaught Error: Cannot access protected property EmailQueue::$conn in /var/www/html/notification-system/cron/email_processor.php:106
+Stack trace:
+#0 /var/www/html/notification-system/cron/email_processor.php(117): EmailProcessor->cleanupOldEmails()
+#1 {main}
+  thrown in /var/www/html/notification-system/cron/email_processor.php on line 106
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+PHP Fatal error:  Uncaught Error: Cannot access protected property EmailQueue::$conn in /var/www/html/notification-system/cron/email_processor.php:106
+Stack trace:
+#0 /var/www/html/notification-system/cron/email_processor.php(117): EmailProcessor->cleanupOldEmails()
+#1 {main}
+  thrown in /var/www/html/notification-system/cron/email_processor.php on line 106
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+PHP Fatal error:  Uncaught Error: Cannot access protected property EmailQueue::$conn in /var/www/html/notification-system/cron/email_processor.php:106
+Stack trace:
+#0 /var/www/html/notification-system/cron/email_processor.php(117): EmailProcessor->cleanupOldEmails()
+#1 {main}
+  thrown in /var/www/html/notification-system/cron/email_processor.php on line 106
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+PHP Fatal error:  Uncaught Error: Cannot access protected property EmailQueue::$conn in /var/www/html/notification-system/cron/email_processor.php:106
+Stack trace:
+#0 /var/www/html/notification-system/cron/email_processor.php(117): EmailProcessor->cleanupOldEmails()
+#1 {main}
+  thrown in /var/www/html/notification-system/cron/email_processor.php on line 106
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+PHP Fatal error:  Uncaught Error: Cannot access protected property EmailQueue::$conn in /var/www/html/notification-system/cron/email_processor.php:106
+Stack trace:
+#0 /var/www/html/notification-system/cron/email_processor.php(117): EmailProcessor->cleanupOldEmails()
+#1 {main}
+  thrown in /var/www/html/notification-system/cron/email_processor.php on line 106
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+PHP Fatal error:  Uncaught Error: Cannot access protected property EmailQueue::$conn in /var/www/html/notification-system/cron/email_processor.php:106
+Stack trace:
+#0 /var/www/html/notification-system/cron/email_processor.php(117): EmailProcessor->cleanupOldEmails()
+#1 {main}
+  thrown in /var/www/html/notification-system/cron/email_processor.php on line 106
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+PHP Fatal error:  Uncaught Error: Cannot access protected property EmailQueue::$conn in /var/www/html/notification-system/cron/email_processor.php:106
+Stack trace:
+#0 /var/www/html/notification-system/cron/email_processor.php(117): EmailProcessor->cleanupOldEmails()
+#1 {main}
+  thrown in /var/www/html/notification-system/cron/email_processor.php on line 106
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+PHP Fatal error:  Uncaught Error: Cannot access protected property EmailQueue::$conn in /var/www/html/notification-system/cron/email_processor.php:106
+Stack trace:
+#0 /var/www/html/notification-system/cron/email_processor.php(117): EmailProcessor->cleanupOldEmails()
+#1 {main}
+  thrown in /var/www/html/notification-system/cron/email_processor.php on line 106
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+PHP Fatal error:  Uncaught Error: Cannot access protected property EmailQueue::$conn in /var/www/html/notification-system/cron/email_processor.php:106
+Stack trace:
+#0 /var/www/html/notification-system/cron/email_processor.php(117): EmailProcessor->cleanupOldEmails()
+#1 {main}
+  thrown in /var/www/html/notification-system/cron/email_processor.php on line 106
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+PHP Fatal error:  Uncaught Error: Cannot access protected property EmailQueue::$conn in /var/www/html/notification-system/cron/email_processor.php:106
+Stack trace:
+#0 /var/www/html/notification-system/cron/email_processor.php(117): EmailProcessor->cleanupOldEmails()
+#1 {main}
+  thrown in /var/www/html/notification-system/cron/email_processor.php on line 106
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+Email Processor finished. Results: Sent 0, Failed 0
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+Email Processor finished. Results: Sent 0, Failed 0
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+Email Processor finished. Results: Sent 0, Failed 0
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+Email Processor finished. Results: Sent 0, Failed 0
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+Email Processor finished. Results: Sent 0, Failed 0
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+Email Processor finished. Results: Sent 0, Failed 0
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+Email Processor finished. Results: Sent 0, Failed 0
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+Email Processor finished. Results: Sent 0, Failed 0
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+Email Processor finished. Results: Sent 0, Failed 0
+Could not open input file: /var/www/html/notification-system/cron/interview_reminder.php
+Email Processor finished. Results: Sent 0, Failed 0
+Email Processor finished. Results: Sent 0, Failed 0
+PHP Fatal error:  Uncaught Error: Class "EmailQueue" not found in /var/www/html/notification-system/services/EmailService.php:11
+Stack trace:
+#0 /var/www/html/notification-system/cron/interview_reminders.php(23): EmailService->__construct()
+#1 /var/www/html/notification-system/cron/interview_reminders.php(105): InterviewReminder->__construct()
+#2 {main}
+  thrown in /var/www/html/notification-system/services/EmailService.php on line 11
+Email Processor finished. Results: Sent 0, Failed 0
+PHP Fatal error:  Uncaught Error: Class "EmailQueue" not found in /var/www/html/notification-system/services/EmailService.php:11
+Stack trace:
+#0 /var/www/html/notification-system/cron/interview_reminders.php(23): EmailService->__construct()
+#1 /var/www/html/notification-system/cron/interview_reminders.php(105): InterviewReminder->__construct()
+#2 {main}
+  thrown in /var/www/html/notification-system/services/EmailService.php on line 11
+Email Processor finished. Results: Sent 0, Failed 0
+PHP Fatal error:  Uncaught Error: Class "EmailQueue" not found in /var/www/html/notification-system/services/EmailService.php:11
+Stack trace:
+#0 /var/www/html/notification-system/cron/interview_reminders.php(23): EmailService->__construct()
+#1 /var/www/html/notification-system/cron/interview_reminders.php(105): InterviewReminder->__construct()
+#2 {main}
+  thrown in /var/www/html/notification-system/services/EmailService.php on line 11
+PHP Fatal error:  Uncaught Error: Class "EmailQueue" not found in /var/www/html/notification-system/services/EmailService.php:11
+Stack trace:
+#0 /var/www/html/notification-system/cron/interview_reminders.php(23): EmailService->__construct()
+#1 /var/www/html/notification-system/cron/interview_reminders.php(105): InterviewReminder->__construct()
+#2 {main}
+  thrown in /var/www/html/notification-system/services/EmailService.php on line 11
+Email Processor finished. Results: Sent 0, Failed 0
+PHP Fatal error:  Uncaught Error: Class "EmailQueue" not found in /var/www/html/notification-system/services/EmailService.php:11
+Stack trace:
+#0 /var/www/html/notification-system/cron/interview_reminders.php(23): EmailService->__construct()
+#1 /var/www/html/notification-system/cron/interview_reminders.php(105): InterviewReminder->__construct()
+#2 {main}
+  thrown in /var/www/html/notification-system/services/EmailService.php on line 11
+Email Processor finished. Results: Sent 0, Failed 0
+PHP Fatal error:  Uncaught Error: Class "EmailQueue" not found in /var/www/html/notification-system/services/EmailService.php:11
+Stack trace:
+#0 /var/www/html/notification-system/cron/interview_reminders.php(23): EmailService->__construct()
+#1 /var/www/html/notification-system/cron/interview_reminders.php(105): InterviewReminder->__construct()
+#2 {main}
+  thrown in /var/www/html/notification-system/services/EmailService.php on line 11
+Email Processor finished. Results: Sent 0, Failed 0
+PHP Fatal error:  Uncaught Error: Class "EmailQueue" not found in /var/www/html/notification-system/services/EmailService.php:11
+Stack trace:
+#0 /var/www/html/notification-system/cron/interview_reminders.php(23): EmailService->__construct()
+#1 /var/www/html/notification-system/cron/interview_reminders.php(105): InterviewReminder->__construct()
+#2 {main}
+  thrown in /var/www/html/notification-system/services/EmailService.php on line 11
+Email Processor finished. Results: Sent 0, Failed 0
+PHP Fatal error:  Uncaught Error: Class "EmailQueue" not found in /var/www/html/notification-system/services/EmailService.php:11
+Stack trace:
+#0 /var/www/html/notification-system/cron/interview_reminders.php(23): EmailService->__construct()
+#1 /var/www/html/notification-system/cron/interview_reminders.php(105): InterviewReminder->__construct()
+#2 {main}
+  thrown in /var/www/html/notification-system/services/EmailService.php on line 11
+Email Processor finished. Results: Sent 0, Failed 0
+PHP Fatal error:  Uncaught Error: Class "EmailQueue" not found in /var/www/html/notification-system/services/EmailService.php:11
+Stack trace:
+#0 /var/www/html/notification-system/cron/interview_reminders.php(23): EmailService->__construct()
+#1 /var/www/html/notification-system/cron/interview_reminders.php(105): InterviewReminder->__construct()
+#2 {main}
+  thrown in /var/www/html/notification-system/services/EmailService.php on line 11
+Email Processor finished. Results: Sent 0, Failed 0
+PHP Fatal error:  Uncaught Error: Class "EmailQueue" not found in /var/www/html/notification-system/services/EmailService.php:11
+Stack trace:
+#0 /var/www/html/notification-system/cron/interview_reminders.php(23): EmailService->__construct()
+#1 /var/www/html/notification-system/cron/interview_reminders.php(105): InterviewReminder->__construct()
+#2 {main}
+  thrown in /var/www/html/notification-system/services/EmailService.php on line 11
+Email Processor finished. Results: Sent 0, Failed 0
+PHP Fatal error:  Uncaught Error: Class "EmailQueue" not found in /var/www/html/notification-system/services/EmailService.php:11Email Processor finished. Results: Sent 0, Failed 0
+
+Stack trace:
+#0 /var/www/html/notification-system/cron/interview_reminders.php(23): EmailService->__construct()
+#1 /var/www/html/notification-system/cron/interview_reminders.php(105): InterviewReminder->__construct()
+#2 {main}
+  thrown in /var/www/html/notification-system/services/EmailService.php on line 11
+PHP Fatal error:  Uncaught Error: Class "EmailQueue" not found in /var/www/html/notification-system/services/EmailService.php:11
+Stack trace:
+#0 /var/www/html/notification-system/cron/interview_reminders.php(23): EmailService->__construct()
+#1 /var/www/html/notification-system/cron/interview_reminders.php(105): InterviewReminder->__construct()
+#2 {main}
+  thrown in /var/www/html/notification-system/services/EmailService.php on line 11
+Email Processor finished. Results: Sent 0, Failed 0
+Email Processor finished. Results: Sent 0, Failed 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Email Processor finished. Results: Sent 0, Failed 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Email Processor finished. Results: Sent 0, Failed 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Email Processor finished. Results: Sent 0, Failed 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Email Processor finished. Results: Sent 0, Failed 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Email Processor finished. Results: Sent 0, Failed 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Email Processor finished. Results: Sent 0, Failed 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Email Processor finished. Results: Sent 0, Failed 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Email Processor finished. Results: Sent 0, Failed 0
+Email Processor finished. Results: Sent 0, Failed 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Email Processor finished. Results: Sent 0, Failed 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Email Processor finished. Results: Sent 0, Failed 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Email Processor finished. Results: Sent 0, Failed 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Email Processor finished. Results: Sent 0, Failed 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Email Processor finished. Results: Sent 0, Failed 0
+Email Processor finished. Results: Sent 0, Failed 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Email Processor finished. Results: Sent 0, Failed 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Email Processor finished. Results: Sent 0, Failed 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Email Processor finished. Results: Sent 0, Failed 0
+Email Processor finished. Results: Sent 0, Failed 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Email Processor finished. Results: Sent 0, Failed 0
+Email Processor finished. Results: Sent 0, Failed 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Email Processor finished. Results: Sent 0, Failed 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Email Processor finished. Results: Sent 0, Failed 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Email Processor finished. Results: Sent 0, Failed 0
+Email Processor finished. Results: Sent 0, Failed 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Email Processor finished. Results: Sent 0, Failed 0
+Email Processor finished. Results: Sent 0, Failed 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Email Processor finished. Results: Sent 0, Failed 0
+Email Processor finished. Results: Sent 0, Failed 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Email Processor finished. Results: Sent 0, Failed 0
+Email Processor finished. Results: Sent 0, Failed 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Email Processor finished. Results: Sent 0, Failed 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Email Processor finished. Results: Sent 0, Failed 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Email Processor finished. Results: Sent 0, Failed 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Email Processor finished. Results: Sent 0, Failed 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Email Processor finished. Results: Sent 0, Failed 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Email Processor finished. Results: Sent 0, Failed 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Email Processor finished. Results: Sent 0, Failed 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Email Processor finished. Results: Sent 0, Failed 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Email Processor finished. Results: Sent 0, Failed 0
+Email Processor finished. Results: Sent 0, Failed 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Email Processor finished. Results: Sent 0, Failed 0
+Email Processor finished. Results: Sent 0, Failed 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Email Processor finished. Results: Sent 0, Failed 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Email Processor finished. Results: Sent 0, Failed 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Email Processor finished. Results: Sent 0, Failed 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Email Processor finished. Results: Sent 0, Failed 0
+Email Processor finished. Results: Sent 0, Failed 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Email Processor finished. Results: Sent 0, Failed 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Email Processor finished. Results: Sent 0, Failed 0
+Email Processor finished. Results: Sent 0, Failed 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Email Processor finished. Results: Sent 2, Failed 0
+Email Processor finished. Results: Sent 0, Failed 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Interview Reminder finished. 24h: 0, 2h: 0
+Email Processor finished. Results: Sent 0, Failed 0

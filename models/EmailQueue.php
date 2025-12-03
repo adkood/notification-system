@@ -1,8 +1,9 @@
 <?php
-require_once 'Model.php';
+
+require_once dirname(__FILE__) . '/Model.php';
 
 class EmailQueue extends Model {
-    protected $table = 'email_queue';
+    public $table = 'email_queue';
 
     public function addToQueue($email_data) {
         $to_email = $this->escape($email_data['to_email']);
