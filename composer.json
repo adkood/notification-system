@@ -1,0 +1,8 @@
+{
+    "name": "your-vendor/your-project",
+    "description": "A job portal notification system",
+    "require": {
+        "phpmailer/phpmailer": "^7.0",
+        "firebase/php-jwt": "^6.11"
+    }
+}
