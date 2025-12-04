@@ -98,6 +98,7 @@ class AuthController {
             'last_name' => $data['last_name'] ?? '',
             'phone' => $data['phone'] ?? '',
             'location' => $data['location'] ?? '',
+            'company_name' => $data['company_name'] ?? '',
             'skills' => isset($data['skills']) ? json_encode($data['skills']) : null,
             'verification_token' => $this->security->generateVerificationToken(),
             'verification_expires' => date('Y-m-d H:i:s', time() + 86400) // 24 hours

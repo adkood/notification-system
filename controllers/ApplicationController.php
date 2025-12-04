@@ -30,7 +30,7 @@ class ApplicationController {
             case 'POST':
                 // Only candidates should be able to apply via POST
                 if ($authPayload['user_type'] !== 'candidate') {
-                    $this->sendResponse(403, ['error' => 'Only candidates can perform this POST action.']);
+                    $this->sendResponse(403, ['error' => 'Only candidates can apply to jobs.']);
                     return;
                 }
                 $this->handlePost($action, $authPayload);

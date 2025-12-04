@@ -58,7 +58,7 @@ class ApplicationService {
             $this->notificationService->sendApplicationStatusNotification(
                 $candidateId, 
                 $job['title'], 
-                $employer['first_name'], 
+                $employer['company_name'] ?? $employer['first_name'], 
                 'received', 
                 'Thank only you for your application! We will review your profile shortly.',
                 $newId // Passing the application ID for email metadata
