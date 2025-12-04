@@ -32,7 +32,7 @@ class Application extends Model {
         // --- FIX: Using inherited escape() ---
         $candidateId = $this->escape($candidateId);
         $sql = "
-            SELECT a.*, j.title, j.location, u.first_name as company_name 
+            SELECT a.*, j.title, j.location, u.company_name as company_name 
             FROM applications a 
             JOIN jobs j ON a.job_id = j.id 
             JOIN users u ON j.company_id = u.id 

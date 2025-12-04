@@ -27,7 +27,7 @@ class Job extends Model {
      * Gets a list of jobs with optional filters.
      */
     public function getJobList($filters = [], $limit = 10, $offset = 0) {
-        $sql = "SELECT j.*, u.first_name as company_name 
+        $sql = "SELECT j.*, u.company_name as company_name 
                 FROM {$this->table} j 
                 JOIN users u ON j.company_id = u.id 
                 WHERE j.is_active = 1"; // Only show active jobs
@@ -73,7 +73,7 @@ class Job extends Model {
             $where[] = "j.company_id = '{$cid}'";
         }
         
-        $sql = "SELECT j.id, j.title, j.location, u.first_name AS company_name 
+        $sql = "SELECT j.id, j.title, j.location, u.company_name AS company_name 
                 FROM {$this->table} j 
                 JOIN users u ON j.company_id = u.id 
                 WHERE " . implode(' AND ', $where) . "

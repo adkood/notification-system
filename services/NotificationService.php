@@ -105,9 +105,11 @@ class NotificationService {
         $candidate = $userModel->findById($interview_data['candidate_id']);
         $employer = $userModel->findById($interview_data['employer_id']);
 
+        $companyName = $interview_data['company_name'] ?? $employer['company_name'];
+
         $email_data = array_merge($interview_data, [
             'candidate_name' => $candidate['first_name'] . ' ' . $candidate['last_name'],
-            'company_name' => $employer['first_name'],
+            'company_name' => $companyName ?? $employer['first_name'],
             'candidate_email' => $candidate['email']
         ]);
 

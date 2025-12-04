@@ -1,0 +1,95 @@
+2025-12-04 09:11:47 - Job alert emails queued: 0.
+2025-12-04 09:15:36 - Job alert emails queued: 0.
+2025-12-04 09:17:03 - Job alert emails queued: 0.
+2025-12-04 09:22:29 - Job alert emails queued: 0.
+2025-12-04 09:23:36 - Job alert emails queued: 0.
+2025-12-04 09:24:57 - Job alert emails queued: 1.
+2025-12-04 09:37:12 - Job alert emails queued: 1.
+2025-12-04 09:38:22 - Job alert emails queued: 1.
+2025-12-04 09:38:54 - Job alert emails queued: 2.
+2025-12-04 09:52:02 - Job alert emails queued: 2.
+2025-12-04 09:57:57 - Job alert emails queued: 2.
+Job Alert SQL: 
+            SELECT id, title, location, company_id, description 
+            FROM jobs 
+            WHERE is_active = 1
+            AND created_at >= DATE_SUB(NOW(), INTERVAL 1 DAY)
+         AND LOWER(location) LIKE '%noida%' AND LOWER(title) LIKE '%developer%' AND (LOWER(description) LIKE '%java%' OR LOWER(description) LIKE '%react%')
+Job Alert SQL: 
+            SELECT id, title, location, company_id, description 
+            FROM jobs 
+            WHERE is_active = 1
+            AND created_at >= DATE_SUB(NOW(), INTERVAL 1 DAY)
+         AND LOWER(location) LIKE '%noida%' AND LOWER(title) LIKE '%developer%' AND (LOWER(description) LIKE '%java%')
+2025-12-04 10:04:02 - Job alert emails queued: 2.
+Job Alert Processor finished. Total emails queued: 2.
+Job Alert SQL: 
+            SELECT id, title, location, company_id, description 
+            FROM jobs 
+            WHERE is_active = 1
+            AND created_at >= DATE_SUB(NOW(), INTERVAL 1 DAY)
+         AND LOWER(location) LIKE '%noida%' AND LOWER(title) LIKE '%developer%' AND (LOWER(description) LIKE '%java%' OR LOWER(description) LIKE '%react%')
+Job Alert SQL: 
+            SELECT id, title, location, company_id, description 
+            FROM jobs 
+            WHERE is_active = 1
+            AND created_at >= DATE_SUB(NOW(), INTERVAL 1 DAY)
+         AND LOWER(location) LIKE '%noida%' AND LOWER(title) LIKE '%developer%' AND (LOWER(description) LIKE '%java%')
+2025-12-04 10:05:02 - Job alert emails queued: 2.
+Job Alert Processor finished. Total emails queued: 2.
+Job Alert SQL: 
+            SELECT id, title, location, company_id, description 
+            FROM jobs 
+            WHERE is_active = 1
+            AND created_at >= DATE_SUB(NOW(), INTERVAL 1 DAY)
+         AND LOWER(location) LIKE '%noida%' AND LOWER(title) LIKE '%developer%' AND (LOWER(description) LIKE '%java%' OR LOWER(description) LIKE '%react%')
+Job Alert SQL: 
+            SELECT id, title, location, company_id, description 
+            FROM jobs 
+            WHERE is_active = 1
+            AND created_at >= DATE_SUB(NOW(), INTERVAL 1 DAY)
+         AND LOWER(location) LIKE '%noida%' AND LOWER(title) LIKE '%developer%' AND (LOWER(description) LIKE '%java%')
+2025-12-04 10:06:01 - Job alert emails queued: 2.
+Job Alert Processor finished. Total emails queued: 2.
+Job Alert SQL: 
+            SELECT id, title, location, company_id, description 
+            FROM jobs 
+            WHERE is_active = 1
+            AND created_at >= DATE_SUB(NOW(), INTERVAL 1 DAY)
+         AND LOWER(location) LIKE '%noida%' AND LOWER(title) LIKE '%developer%' AND (LOWER(description) LIKE '%java%' OR LOWER(description) LIKE '%react%')
+Job Alert SQL: 
+            SELECT id, title, location, company_id, description 
+            FROM jobs 
+            WHERE is_active = 1
+            AND created_at >= DATE_SUB(NOW(), INTERVAL 1 DAY)
+         AND LOWER(location) LIKE '%noida%' AND LOWER(title) LIKE '%developer%' AND (LOWER(description) LIKE '%java%')
+2025-12-04 10:07:03 - Job alert emails queued: 2.
+Job Alert Processor finished. Total emails queued: 2.
+Job Alert SQL: 
+            SELECT id, title, location, company_id, description 
+            FROM jobs 
+            WHERE is_active = 1
+            AND created_at >= DATE_SUB(NOW(), INTERVAL 1 DAY)
+         AND LOWER(location) LIKE '%noida%' AND LOWER(title) LIKE '%developer%' AND (LOWER(description) LIKE '%java%' OR LOWER(description) LIKE '%react%')
+Job Alert SQL: 
+            SELECT id, title, location, company_id, description 
+            FROM jobs 
+            WHERE is_active = 1
+            AND created_at >= DATE_SUB(NOW(), INTERVAL 1 DAY)
+         AND LOWER(location) LIKE '%noida%' AND LOWER(title) LIKE '%developer%' AND (LOWER(description) LIKE '%java%')
+2025-12-04 10:08:04 - Job alert emails queued: 2.
+Job Alert Processor finished. Total emails queued: 2.
+Job Alert SQL: 
+            SELECT id, title, location, company_id, description 
+            FROM jobs 
+            WHERE is_active = 1
+            AND created_at >= DATE_SUB(NOW(), INTERVAL 1 DAY)
+         AND LOWER(location) LIKE '%noida%' AND LOWER(title) LIKE '%developer%' AND (LOWER(description) LIKE '%java%' OR LOWER(description) LIKE '%react%')
+Job Alert SQL: 
+            SELECT id, title, location, company_id, description 
+            FROM jobs 
+            WHERE is_active = 1
+            AND created_at >= DATE_SUB(NOW(), INTERVAL 1 DAY)
+         AND LOWER(location) LIKE '%noida%' AND LOWER(title) LIKE '%developer%' AND (LOWER(description) LIKE '%java%')
+2025-12-04 10:09:05 - Job alert emails queued: 2.
+Job Alert Processor finished. Total emails queued: 2.

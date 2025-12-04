@@ -118,7 +118,7 @@ class ApplicationService {
         if ($updateResult) {
             $employer = $this->userModel->findById($employerId);
             $jobTitle = $job['title'];
-            $companyName = $employer['first_name'];
+            $companyName = $employer['company_name'] ?? $employer['first_name'];
             
             // Trigger appropriate notification based on status change
             if ($newStatus === 'scheduled') {

@@ -1,25 +1,16 @@
 <?php
-// processors/interview_reminder.php
-// To be run via Cron: * * * * * /usr/bin/php /path/to/project/cron/interview_reminders.php
 
-// Define ROOT_PATH relative to the script location
-// Since 'cron' is a subdirectory of 'notification-system'
 define('ROOT_PATH', dirname(__DIR__)); 
 
-// --- CRITICAL FIX: Load Configuration First ---
-// Load BASE_URL and other necessary constants
 require_once ROOT_PATH . '/config/constants.php';
-// Load database configuration (needed by Model.php)
 require_once ROOT_PATH . '/config/database.php';
 
-
-// Autoloading for required classes
 require_once ROOT_PATH . '/models/Model.php';
 require_once ROOT_PATH . '/models/Interview.php';
 require_once ROOT_PATH . '/services/EmailService.php';
 require_once ROOT_PATH . '/models/User.php'; 
 require_once ROOT_PATH . '/models/EmailQueue.php';
-require_once ROOT_PATH . '/models/EmailTemplate.php'; // EmailService needs this
+require_once ROOT_PATH . '/models/EmailTemplate.php'; 
 
 class InterviewReminder {
     private $interviewModel;
@@ -31,7 +22,6 @@ class InterviewReminder {
     }
 
     public function send24HourReminders() {
-        // --- LOGIC FIX: Use relative time comparison, not fixed date ---
         
         $sql = "SELECT i.*, 
                 c.first_name AS candidate_first_name, c.last_name AS candidate_last_name, c.email AS candidate_email,
@@ -40,10 +30,9 @@ class InterviewReminder {
                 FROM interview_schedules i
                 JOIN users c ON i.candidate_id = c.id
                 JOIN users e ON i.employer_id = e.id
-                JOIN jobs j ON i.job_id = j.id  -- CRITICAL: JOIN jobs table
+                JOIN jobs j ON i.job_id = j.id  
                 WHERE i.status = 'scheduled'
                 AND i.reminder_sent_24h = 0
-                -- Interview is in the future AND within the next 24 hours
                 AND TIMESTAMP(i.interview_date, i.interview_time) > NOW()
                 AND TIMESTAMP(i.interview_date, i.interview_time) <= DATE_ADD(NOW(), INTERVAL 24 HOUR)";
         
@@ -53,7 +42,6 @@ class InterviewReminder {
     }
 
     public function send2HourReminders() {
-        // --- LOGIC FIX: Use SQL functions for accurate time comparison ---
         
         $sql = "SELECT i.*, 
                 c.first_name AS candidate_first_name, c.last_name AS candidate_last_name, c.email AS candidate_email,
@@ -62,10 +50,9 @@ class InterviewReminder {
                 FROM interview_schedules i
                 JOIN users c ON i.candidate_id = c.id
                 JOIN users e ON i.employer_id = e.id
-                JOIN jobs j ON i.job_id = j.id  -- CRITICAL: JOIN jobs table
+                JOIN jobs j ON i.job_id = j.id  
                 WHERE i.status = 'scheduled'
                 AND i.reminder_sent_2h = 0
-                -- Interview is in the future AND within the next 2 hours
                 AND TIMESTAMP(i.interview_date, i.interview_time) > NOW()
                 AND TIMESTAMP(i.interview_date, i.interview_time) <= DATE_ADD(NOW(), INTERVAL 2 HOUR)";
 
@@ -76,7 +63,6 @@ class InterviewReminder {
     
     private function processReminders($sql, $hours) {
         $result = $this->interviewModel->query($sql);
-        // NOTE: $this->interviewModel->query() must return a valid mysqli result object or similar.
         if (!$result || $result->num_rows === 0) return 0;
         
         $reminders_sent = 0;
@@ -84,14 +70,12 @@ class InterviewReminder {
         while ($interview = $result->fetch_assoc()) {
             
             $email_data = [
-                // Required by EmailService->sendInterviewReminder
                 'candidate_email' => $interview['candidate_email'],
                 'candidate_name' => $interview['candidate_first_name'] . ' ' . $interview['candidate_last_name'],
-                'company_name' => $interview['employer_first_name'],
+                'company_name' => $interview['company_name'] ?? $interview['employer_first_name'],
                 
-                // Interview details
                 'id' => $interview['id'],
-                'job_title' => $interview['job_title'], // Now correctly fetched
+                'job_title' => $interview['job_title'], 
                 'interview_date' => $interview['interview_date'],
                 'interview_time' => $interview['interview_time'],
                 'mode' => $interview['mode'],
