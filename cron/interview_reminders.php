@@ -1,18 +1,25 @@
 <?php
 // processors/interview_reminder.php
-// To be run via Cron: * * * * * /usr/bin/php /path/to/project/processors/interview_reminder.php
+// To be run via Cron: * * * * * /usr/bin/php /path/to/project/cron/interview_reminders.php
 
 // Define ROOT_PATH relative to the script location
-define('ROOT_PATH', dirname(__DIR__));
+// Since 'cron' is a subdirectory of 'notification-system'
+define('ROOT_PATH', dirname(__DIR__)); 
+
+// --- CRITICAL FIX: Load Configuration First ---
+// Load BASE_URL and other necessary constants
+require_once ROOT_PATH . '/config/constants.php';
+// Load database configuration (needed by Model.php)
+require_once ROOT_PATH . '/config/database.php';
+
 
 // Autoloading for required classes
 require_once ROOT_PATH . '/models/Model.php';
 require_once ROOT_PATH . '/models/Interview.php';
 require_once ROOT_PATH . '/services/EmailService.php';
-require_once ROOT_PATH . '/models/User.php'; // Required for EmailService context
+require_once ROOT_PATH . '/models/User.php'; 
 require_once ROOT_PATH . '/models/EmailQueue.php';
-// Configuration files
-require_once ROOT_PATH . '/config/database.php';
+require_once ROOT_PATH . '/models/EmailTemplate.php'; // EmailService needs this
 
 class InterviewReminder {
     private $interviewModel;
@@ -20,21 +27,25 @@ class InterviewReminder {
 
     public function __construct() {
         $this->interviewModel = new Interview();
-        $this->emailService = new EmailService(); // Requires other models/templates to be defined
+        $this->emailService = new EmailService(); 
     }
 
     public function send24HourReminders() {
-        $tomorrow = date('Y-m-d', strtotime('+1 day'));
+        // --- LOGIC FIX: Use relative time comparison, not fixed date ---
         
         $sql = "SELECT i.*, 
-                c.first_name as candidate_first_name, c.last_name as candidate_last_name, c.email as candidate_email,
-                e.first_name as employer_first_name
+                c.first_name AS candidate_first_name, c.last_name AS candidate_last_name, c.email AS candidate_email,
+                e.first_name AS employer_first_name,
+                j.title AS job_title
                 FROM interview_schedules i
                 JOIN users c ON i.candidate_id = c.id
                 JOIN users e ON i.employer_id = e.id
-                WHERE i.interview_date = '{$tomorrow}'
-                AND i.status = 'scheduled'
-                AND i.reminder_sent_24h = 0";
+                JOIN jobs j ON i.job_id = j.id  -- CRITICAL: JOIN jobs table
+                WHERE i.status = 'scheduled'
+                AND i.reminder_sent_24h = 0
+                -- Interview is in the future AND within the next 24 hours
+                AND TIMESTAMP(i.interview_date, i.interview_time) > NOW()
+                AND TIMESTAMP(i.interview_date, i.interview_time) <= DATE_ADD(NOW(), INTERVAL 24 HOUR)";
         
         $reminders_sent = $this->processReminders($sql, 24);
 
@@ -42,19 +53,21 @@ class InterviewReminder {
     }
 
     public function send2HourReminders() {
-        // Calculate the next 2-hour window (e.g., now until 2 hours from now)
-        $future_time = date('Y-m-d H:i:s', strtotime('+2 hours'));
-        $current_time = date('Y-m-d H:i:s');
+        // --- LOGIC FIX: Use SQL functions for accurate time comparison ---
         
         $sql = "SELECT i.*, 
-                c.first_name as candidate_first_name, c.last_name as candidate_last_name, c.email as candidate_email,
-                e.first_name as employer_first_name
+                c.first_name AS candidate_first_name, c.last_name AS candidate_last_name, c.email AS candidate_email,
+                e.first_name AS employer_first_name,
+                j.title AS job_title
                 FROM interview_schedules i
                 JOIN users c ON i.candidate_id = c.id
                 JOIN users e ON i.employer_id = e.id
-                WHERE CONCAT(i.interview_date, ' ', i.interview_time) BETWEEN '{$current_time}' AND '{$future_time}'
-                AND i.status = 'scheduled'
-                AND i.reminder_sent_2h = 0";
+                JOIN jobs j ON i.job_id = j.id  -- CRITICAL: JOIN jobs table
+                WHERE i.status = 'scheduled'
+                AND i.reminder_sent_2h = 0
+                -- Interview is in the future AND within the next 2 hours
+                AND TIMESTAMP(i.interview_date, i.interview_time) > NOW()
+                AND TIMESTAMP(i.interview_date, i.interview_time) <= DATE_ADD(NOW(), INTERVAL 2 HOUR)";
 
         $reminders_sent = $this->processReminders($sql, 2);
 
@@ -63,12 +76,12 @@ class InterviewReminder {
     
     private function processReminders($sql, $hours) {
         $result = $this->interviewModel->query($sql);
-        if (!$result) return 0;
+        // NOTE: $this->interviewModel->query() must return a valid mysqli result object or similar.
+        if (!$result || $result->num_rows === 0) return 0;
         
         $reminders_sent = 0;
 
         while ($interview = $result->fetch_assoc()) {
-            // NOTE: Missing job_title requires you to join the 'jobs' table in the SQL above.
             
             $email_data = [
                 // Required by EmailService->sendInterviewReminder
@@ -78,7 +91,7 @@ class InterviewReminder {
                 
                 // Interview details
                 'id' => $interview['id'],
-                'job_title' => $interview['job_title'] ?? 'Interview Position', // Fix this via better SQL join
+                'job_title' => $interview['job_title'], // Now correctly fetched
                 'interview_date' => $interview['interview_date'],
                 'interview_time' => $interview['interview_time'],
                 'mode' => $interview['mode'],
@@ -90,9 +103,10 @@ class InterviewReminder {
             if ($this->emailService->sendInterviewReminder($email_data)) {
                 // Mark as sent
                 if ($hours === 24) {
-                    $this->interviewModel->mark24HourReminderSent($interview['id']);
+                    // Requires Model::update or specific InterviewModel method
+                    $this->interviewModel->update($interview['id'], ['reminder_sent_24h' => 1]); 
                 } else {
-                    $this->interviewModel->mark2HourReminderSent($interview['id']);
+                    $this->interviewModel->update($interview['id'], ['reminder_sent_2h' => 1]);
                 }
                 $reminders_sent++;
             }
@@ -102,6 +116,11 @@ class InterviewReminder {
 }
 
 // --- EXECUTION BLOCK ---
+// NOTE: Ensure your EmailService has access to database.php for its dependencies.
+
+// Ensure all necessary dependencies are loaded for EmailService
+require_once ROOT_PATH . '/config/email.php'; 
+
 $reminder = new InterviewReminder();
 
 $results_24h = $reminder->send24HourReminders();

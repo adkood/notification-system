@@ -4,6 +4,7 @@
 require_once ROOT_PATH . '/models/Application.php';
 require_once ROOT_PATH . '/models/Job.php';
 require_once ROOT_PATH . '/models/User.php';
+require_once ROOT_PATH . '/models/Interview.php';
 require_once ROOT_PATH . '/services/NotificationService.php';
 require_once ROOT_PATH . '/services/EmailService.php';
 
@@ -13,6 +14,7 @@ class ApplicationService {
     private $userModel;
     private $notificationService;
     private $emailService;
+    private $interviewModel;
 
     public function __construct() {
         $this->applicationModel = new Application();
@@ -20,6 +22,7 @@ class ApplicationService {
         $this->userModel = new User();
         $this->notificationService = new NotificationService();
         $this->emailService = new EmailService();
+        $this->interviewModel = new Interview();
     }
 
     // =========================================================
@@ -41,29 +44,26 @@ class ApplicationService {
         $applicationData = [
             'candidate_id' => $candidateId,
             'job_id' => $jobId,
-            'employer_id' => $job['company_id'],
-            'status' => 'received' // Initial status
+            // 'employer_id' => $job['company_id'],
+            'status' => 'pending' // Initial status
         ];
         
         $newId = $this->applicationModel->create($applicationData);
 
         if ($newId) {
             $candidate = $this->userModel->findById($candidateId);
-            // Assuming employer name is stored in first_name for now
             $employer = $this->userModel->findById($job['company_id']); 
 
-            // 4. Trigger Notifications & Emails
-
             // A. Notify Candidate of Successful Application (In-app + Email)
-            // NOTE: The NotificationService must handle the 'received' status for this to work properly.
             $this->notificationService->sendApplicationStatusNotification(
                 $candidateId, 
                 $job['title'], 
                 $employer['first_name'], 
                 'received', 
-                'Thank you for your application! We will review your profile shortly.'
+                'Thank only you for your application! We will review your profile shortly.',
+                $newId // Passing the application ID for email metadata
             );
-            
+
             // B. Notify Employer of New Application (In-app only)
             $this->notificationService->notificationModel->create([
                 'user_id' => $job['company_id'],
@@ -76,7 +76,7 @@ class ApplicationService {
 
             // C. Optional: Send email to employer of new application (omitted for brevity, use sendEmail method if needed)
 
-            return ['success' => true, 'application_id' => $newId];
+            return ['success' => true, 'application_id' => $newId, 'message' => 'Application submitted successfully.'];
         }
 
         return ['success' => false, 'error' => 'Failed to process application.'];
@@ -100,48 +100,71 @@ class ApplicationService {
             return ['success' => false, 'error' => 'Application not found.'];
         }
         
-        // Ownership check: Ensure the user updating the status is the posting employer
-        if ($application['employer_id'] != $employerId) {
+        $job = $this->jobModel->findById($application['job_id']);
+        
+        // Ownership check
+        if ($job['company_id'] != $employerId) {
             return ['success' => false, 'error' => 'Access denied. You do not own this application.'];
         }
-
+        
         // Prevent updating to the same status
         if ($application['status'] === $newStatus) {
             return ['success' => false, 'error' => 'Application is already in this status.'];
         }
         
-        // Update the database
+        // Update the application status in DB
         $updateResult = $this->applicationModel->update($applicationId, ['status' => $newStatus]);
         
         if ($updateResult) {
-            $job = $this->jobModel->findById($application['job_id']);
             $employer = $this->userModel->findById($employerId);
             $jobTitle = $job['title'];
             $companyName = $employer['first_name'];
             
             // Trigger appropriate notification based on status change
             if ($newStatus === 'scheduled') {
-                // If scheduled, gather required interview details from extraData
+                
+                // 1. --- CRITICAL FIX: SCHEDULE THE INTERVIEW IN DB ---
+                $interviewDataToSave = [
+                    'candidate_id' => $application['candidate_id'],
+                    'employer_id' => $employerId,
+                    'job_id' => $application['job_id'],
+                    'interview_date' => $extraData['interview_date'],
+                    'interview_time' => $extraData['interview_time'],
+                    'mode' => $extraData['mode'],
+                    'location_or_link' => $extraData['location_or_link'],
+                    'additional_notes' => $extraData['additional_notes'] ?? null
+                ];
+                
+                $newInterviewId = $this->interviewModel->create($interviewDataToSave);
+                
+                if (!$newInterviewId) {
+                    // Handle case where interview scheduling failed (e.g., rollback status)
+                    return ['success' => false, 'error' => 'Failed to save interview schedule.'];
+                }
+                
+                // 2. Prepare data for NotificationService, including the new ID
                 $interviewData = array_merge($extraData, [
+                    'id' => $newInterviewId, // Pass the new Interview ID for the email metadata
                     'candidate_id' => $application['candidate_id'],
                     'employer_id' => $employerId,
                     'job_title' => $jobTitle,
-                    // NOTE: The controller must pass 'interview_date', 'interview_time', etc. in $extraData
+                    'company_name' => $companyName,
+                    'application_id' => $applicationId
                 ]);
                 
-                // Use the specialized method from NotificationService
+                // 3. Send notifications
                 $this->notificationService->sendInterviewScheduledNotification($interviewData);
 
             } else if (in_array($newStatus, ['shortlisted', 'rejected', 'hired'])) {
                 $customMessage = $extraData['custom_message'] ?? '';
                 
-                // Use the general application status method
                 $this->notificationService->sendApplicationStatusNotification(
                     $application['candidate_id'], 
                     $jobTitle, 
                     $companyName, 
                     $newStatus, 
-                    $customMessage
+                    $customMessage,
+                    $applicationId
                 );
             }
 

@@ -54,6 +54,11 @@ switch ($endpoint) {
         $controller = new JobController(); 
         $controller->handleRequest();
         break;
+
+    case 'application':
+        $controller = new ApplicationController(); 
+        $controller->handleRequest();
+        break;
         
     default:
         http_response_code(404);

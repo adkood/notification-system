@@ -83,4 +83,9 @@ class User extends Model {
         }
         return $users;
     }
+
+    public function getAllCandidates() {
+        $sql = "SELECT id, email, first_name FROM {$this->table} WHERE user_type = 'candidate' AND is_active = 1";
+        return $this->queryAndFetchAll($sql); // Assuming queryAndFetchAll exists in Model.php
+    }
 }

@@ -1,11 +1,9 @@
 <?php
-// require_once '../config/email.php';
-// require_once '../models/EmailQueue.php';
 
 require_once ROOT_PATH . '/models/EmailQueue.php';
 require_once ROOT_PATH . '/models/EmailTemplate.php';
-
 require_once ROOT_PATH . '/config/email.php';
+require_once ROOT_PATH . '/config/constants.php';
 
 class EmailService {
     private $emailQueue;
@@ -70,6 +68,7 @@ class EmailService {
 
     public function sendApplicationStatusEmail($candidate_email, $candidate_name, $job_title, $company_name, $status, $custom_message = '', $application_id = '') {
         $template_map = [
+            'received'    => 'application_received',
             'shortlisted' => 'application_shortlisted',
             'scheduled' => 'interview_scheduled',
             'rejected' => 'application_rejected',
@@ -100,6 +99,9 @@ class EmailService {
                 ['type' => 'application_status', 'status' => $status, 'application_id' => $application_id]
             );
         }
+
+        error_log("EmailService Error: Failed to render email template for status '{$status}'. Template name: '{$template_name}'");
+
         return false;
     }
 

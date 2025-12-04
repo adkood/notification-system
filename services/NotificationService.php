@@ -5,8 +5,8 @@ require_once ROOT_PATH . '/models/User.php';
 require_once __DIR__ . '/EmailService.php';
 
 class NotificationService {
-    private $notificationModel;
-    private $emailService;
+    public $notificationModel;
+    protected $emailService;
 
     public function __construct() {
         $this->notificationModel = new Notification();
@@ -34,7 +34,7 @@ class NotificationService {
         return $this->emailService->sendWelcomeEmail($user_data);
     }
 
-    public function sendApplicationStatusNotification($candidate_id, $job_title, $company_name, $status, $custom_message = '') {
+    public function sendApplicationStatusNotification($candidate_id, $job_title, $company_name, $status, $custom_message = '',$application_id = null) {
         $userModel = new User();
         $candidate = $userModel->findById($candidate_id);
         
@@ -42,6 +42,7 @@ class NotificationService {
 
         // Create in-app notification
         $status_titles = [
+            'received' => 'Application Received!',
             'shortlisted' => 'You have been shortlisted!',
             'scheduled' => 'Interview Scheduled',
             'rejected' => 'Application Update',
@@ -67,7 +68,8 @@ class NotificationService {
             $job_title,
             $company_name,
             $status,
-            $custom_message
+            $custom_message,
+            $application_id
         );
     }
 
